@@ -1,5 +1,5 @@
 applications:
-- command: python historian-cloudant.py -b
+- command: python record-cloudant.py -b
   path: .
   instances: 2
   memory: 256M
