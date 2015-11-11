@@ -1,0 +1,6 @@
+applications:
+- command: python historian-cloudant.py -b
+  path: .
+  instances: 2
+  memory: 256M
+  buildpack: https://github.com/joshuamckenty/buildpack-python
