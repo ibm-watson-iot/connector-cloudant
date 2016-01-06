@@ -141,7 +141,7 @@ class Server():
 			}
 		}
 		
-		designDocName = "recorder"
+		designDocName = "connector"
 		doc = db.design(designDocName)
 		response = doc.get().result(10)
 		if response.status_code == 200:
