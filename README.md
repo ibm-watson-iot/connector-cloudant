@@ -48,7 +48,7 @@ Each event will be recorded as a single document in Cloudant with the following 
 
 ### Standalone Execution
 ```bash
-$ python record-cloudant.py -c app.cfg -u myCloudantUsername -p myCloudantPassword
+$ python connector-cloudant.py -c app.cfg -u myCloudantUsername -p myCloudantPassword
 Bottle v0.12.8 server starting up (using WSGIRefServer())...
 Listening on http://localhost:8000/
 Hit Ctrl-C to quit.
