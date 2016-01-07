@@ -14,7 +14,7 @@ class Server():
 
 	def __init__(self, args):
 		# Setup logging - Generate a default rotating file log handler and stream handler
-		logFileName = 'record-cloudant.log'
+		logFileName = 'connector-cloudant.log'
 		fhFormatter = logging.Formatter('%(asctime)-25s %(name)-30s ' + ' %(levelname)-7s %(message)s')
 		rfh = RotatingFileHandler(logFileName, mode='a', maxBytes=26214400 , backupCount=2, encoding=None, delay=True)
 		rfh.setFormatter(fhFormatter)
