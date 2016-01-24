@@ -25,22 +25,22 @@ Each event will be recorded as a single document in Cloudant with the following 
 ### Example Document
 ```json
 {
-  _id: "040ff5c2c90d858d2bb02a6dbb4120b8",
-  _rev: "1-6ae9e074b47d8cbf0cc2099d6cb22de9",
-  data: {
-    mem: 9.1,
-    cpu: 1.8,
-    network: {
-      up: 0.02,
-      down: 0.68
+  "_id": "040ff5c2c90d858d2bb02a6dbb4120b8",
+  "_rev": "1-6ae9e074b47d8cbf0cc2099d6cb22de9",
+  "data": {
+    "mem": 9.1,
+    "cpu": 1.8,
+    "network": {
+      "up": 0.02,
+      "down": 0.68
     }
   },
-  payload: "eyJtZW0iOiA5LjEsICJjcHUiOiAxLjgsICJuZXR3b3JrIjogeyJkb3duIjogMC42OCwgInVwIjog MC4wMn19 ",
-  deviceId: "iot-test-01",
-  eventId: "psutil",
-  typeId: "vm",
-  format: "json",
-  timestamp: "2016-01-06T19:41:32.108595+00:00"
+  "payload": "eyJtZW0iOiA5LjEsICJjcHUiOiAxLjgsICJuZXR3b3JrIjogeyJkb3duIjogMC42OCwgInVwIjog MC4wMn19 ",
+  "deviceId": "iot-test-01",
+  "eventId": "psutil",
+  "typeId": "vm",
+  "format": "json",
+  "timestamp": "2016-01-06T19:41:32.108595+00:00"
 }
 ```
 
