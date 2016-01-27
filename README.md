@@ -1,11 +1,11 @@
-# IoTF Cloudant Connector
+# Watson IoT Cloudant Connector
 
 ## Overview
-The application will automatically create a database in the specified Cloudant account in the format **``orgId``-events**.  Within that database the application will write a new document for every event submitted by your IoTF devices.  It also maintains a single design document named ``connector`` with some out of the box views you may find useful.  Any changes you make to this design document will be overwritten the next time the application starts, however you are free to create additional design documents.
+The application will automatically create a database in the specified Cloudant account in the format **``orgId``-events**.  Within that database the application will write a new document for every event submitted by your Watson IoT devices.  It also maintains a single design document named ``connector`` with some out of the box views you may find useful.  Any changes you make to this design document will be overwritten the next time the application starts, however you are free to create additional design documents.
 
 The application does not provide an API to access the stored events, nor does it support exiry of older data.  Use the [Cloudant APIs](https://docs.cloudant.com/api.html) to retrieve and manage the stored events. 
 
-- [Internet of Things Foundation](https://internetofthings.ibmcloud.com)
+- [Watson IoT](https://internetofthings.ibmcloud.com)
 - [Cloudant](https://cloudant.com)
 
 
