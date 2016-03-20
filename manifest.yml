@@ -1,6 +1,6 @@
 applications:
-- command: python connector-cloudant.py --bluemix
+- command: python connector/connector-cloudant.py --bluemix
   path: .
-  instances: 2
+  instances: 1
   memory: 256M
   buildpack: https://github.com/cloudfoundry/python-buildpack

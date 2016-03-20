@@ -39,24 +39,29 @@ class Server():
 			self.dbUsername = service['cloudantNoSQLDB'][0]['credentials']['username']
 			self.dbPassword = service['cloudantNoSQLDB'][0]['credentials']['password']
 		else:
-			self.options = ibmiotf.application.ParseConfigFile(args.config)
+			if args.token is not None:
+				self.options = {'auth-token': args.token, 'auth-key': args.key}
+			else:
+				self.options = ibmiotf.application.ParseConfigFile(args.config)
+
 			self.dbUsername = args.cloudantUsername
 			self.dbPassword = args.cloudantPassword
 		
+		# Init IOTF client
+		self.client = ibmiotf.application.Client(self.options, logHandlers=[rfh])
 		
-		self.dbName = self.options['org'] + "-events"
 		
 		# Bottle
 		self._app = Bottle()
 		self._route()
 		
 		# Init Cloudant client
+		self.dbName = self.client.orgId + "-events"
+		
 		self._cloudantAccount = None
 		self._cloudantLogin()
 		self._cloudantDb = self._createDatabaseIfNotExists()
 		
-		# Init IOTF client
-		self.client = ibmiotf.application.Client(self.options, logHandlers=[rfh])
 	
 	
 	def _route(self):
@@ -163,6 +168,8 @@ class Server():
 parser = argparse.ArgumentParser()
 parser.add_argument('-b', '--bluemix', required=False, action='store_true')
 parser.add_argument('-c', '--config', required=False)
+parser.add_argument('-k', '--key', required=False)
+parser.add_argument('-t', '--token', required=False)
 parser.add_argument('-u', '--cloudantUsername', required=False)
 parser.add_argument('-p', '--cloudantPassword', required=False)
 
